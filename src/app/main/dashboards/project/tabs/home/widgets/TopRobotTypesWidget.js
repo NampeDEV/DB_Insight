@@ -8,12 +8,12 @@ import { useSelector } from 'react-redux';
 import FuseSvgIcon from '@aiscore/core/FuseSvgIcon';
 import { selectWidgets } from '../../../store/widgetsSlice';
 
-function TopRobotUtiliWidget() {
+ 
+function TopRobotTypesWidget() {
   const widgets = useSelector(selectWidgets);
-  const series = [10,90];
+  const series = [60,40];
   const labels = ['Attened','UnAttended'];
   const theme = useTheme();
-
   const chartOptions = {
     chart: {
       animations: {
@@ -30,14 +30,8 @@ function TopRobotUtiliWidget() {
         enabled: true,
       },
     },
-    plotOptions: {
-      pie: {
-        startAngle: -90,
-        endAngle: 90,
-        offsetY: 10
-      }
-    },
-    colors: ['#3182CE', '#0C8FFB'],
+ 
+    colors: ['#FF9046', '#63B3ED'],
     labels: ['Attened','UnAttended'],
  
     stroke: {
@@ -76,7 +70,7 @@ function TopRobotUtiliWidget() {
           className="px-16 text-lg font-medium tracking-tight leading-6 truncate"
           color="text.secondary"
         >
-          Robot Utilization ( UnAttended )
+          Robot Types
         </Typography>
         <IconButton aria-label="more" size="large">
           <FuseSvgIcon>heroicons-outline:dots-vertical</FuseSvgIcon>
@@ -91,9 +85,9 @@ function TopRobotUtiliWidget() {
           height={chartOptions.chart.height}
         />
       </div>
- 
+   
     </Paper>
   );
 }
 
-export default memo(TopRobotUtiliWidget);
+export default memo(TopRobotTypesWidget);

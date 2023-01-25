@@ -1,16 +1,10 @@
 import { motion } from 'framer-motion';
-import SummaryWidget from './widgets/SummaryWidget';
-import OverdueWidget from './widgets/OverdueWidget';
-import IssuesWidget from './widgets/IssuesWidget';
-import FeaturesWidget from './widgets/FeaturesWidget';
-import GithubIssuesWidget from './widgets/GithubIssuesWidget';
-import TaskDistributionWidget from './widgets/TaskDistributionWidget';
-import ScheduleWidget from './widgets/ScheduleWidget';
+ 
 // Widget On Top Dasgboard  
 import TopTotalUtilizationWidget from './widgets/TopTotalUtilizationWidget';
 import TopRobotAttendedWidget from './widgets/TopRobotAttendedWidget';
 import TopRobotUtiliWidget from './widgets/TopRobotUtiliWidget';
-import TopProductivityHrWidget from './widgets/TopProductivityHrWidget';
+import TopRobotTypesWidget from './widgets/TopRobotTypesWidget';
 // Widget On Second Dashboard
 import SecondUnAttenedWidget from './widgets/SecondUnAttenedWidget';
 import SecondAttenedWidget from './widgets/SecondAttenedWidget';
@@ -49,7 +43,7 @@ function HomeTab() {
         <TopRobotUtiliWidget />
       </motion.div>
       <motion.div variants={item}>
-        <TopProductivityHrWidget />
+        <TopRobotTypesWidget />
       </motion.div>
       <motion.div variants={item} className="sm:col-span-2 md:col-span-4 lg:col-span-2">
         <SecondUnAttenedWidget />

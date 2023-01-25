@@ -67,22 +67,14 @@ function ProjectDashboardAppHeader(props) {
           </div>
         </div>
         <div className="flex items-center mt-24 sm:mt-0 sm:mx-8 space-x-12">
-          {/* <Button
-            className="whitespace-nowrap"
-            variant="contained"
-            color="primary"
-            startIcon={<FuseSvgIcon size={20}>heroicons-solid:mail</FuseSvgIcon>}
-          >
-            Messages
-          </Button>
           <Button
             className="whitespace-nowrap"
             variant="contained"
-            color="secondary"
-            startIcon={<FuseSvgIcon size={20}>heroicons-solid:cog</FuseSvgIcon>}
+            color="primary"
+            startIcon={<FuseSvgIcon size={20}>heroicons-outline:newspaper</FuseSvgIcon>}
           >
-            Settings
-          </Button> */}
+            Export
+          </Button>
         </div>
       </div>
       <div className="flex items-center">

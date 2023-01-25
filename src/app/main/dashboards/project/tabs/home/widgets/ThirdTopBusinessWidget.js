@@ -11,169 +11,98 @@ import { selectWidgets } from '../../../store/widgetsSlice';
 
 function ThirdTopBusinessWidget(props) {
   const widgets = useSelector(selectWidgets);
-  const { overview, series, labels, ranges } = widgets?.taskDistribution;
+  const { overview,  labels } = widgets?.taskDistribution;
   const [tabValue, setTabValue] = useState(0);
+  const ranges = ['Weekly','Monthly'];
   const currentRange = Object.keys(ranges)[tabValue];
   const [awaitRender, setAwaitRender] = useState(true);
   const theme = useTheme();
 
-  console.log(series[currentRange]) ;
+ 
 
   const Options = {
+    animations: {
+      speed: 1000,
+      animateGradually: {
+        enabled: true,
+      },
+    },
+    height: 400,
     series: [{
-    name: 'ROBOT1',
-    data: [44, 55, 41, 67, 22, 43]
-  }, {
-    name: 'ROBOT2',
-    data: [13, 23, 20, 1, 13, 27]
-  }, {
-    name: 'ROBOT3',
-    data: [11, 17, 15, 1, 21, 14]
-  }, {
-    name: 'ROBOT4',
-    data: [13, 23, 5, 8, 13, 27]
-  }, {
-    name: 'ROBOT5',
-    data: [11, 17, 4, 15, 21, 14]
-  }, {
-    name: 'ROBOT6',
-    data: [13, 3, 20, 8, 13, 27]
-  }, {
-    name: 'ROBOT7',
-    data: [2, 17, 15, 15, 21, 14]
-  }, {
-    name: 'ROBOT8',
-    data: [1, 7, 25, 13, 22, 8]
-  }],
-
-    chart: {
-    type: 'bar',
-    height: 350,
-    stacked: true,
-    toolbar: {
-      show: true
-    },
-    zoom: {
-      enabled: true
-    }
-  },
-  responsive: [{
-    breakpoint: 480,
-    options: {
-      legend: {
-        position: 'bottom',
-        offsetX: -10,
-        offsetY: 0
-      }
-    }
-  }],
-  plotOptions: {
-    bar: {
-      horizontal: false,
-      borderRadius: 0,
-      dataLabels: {
-        total: {
-          enabled: true,
-          style: {
-            fontSize: '13px',
-            fontWeight: 900
-          }
+      data: [
+        {
+          x: 'New Delhi',
+          y: 218
+        },
+        {
+          x: 'Kolkata',
+          y: 149
+        },
+        {
+          x: 'Mumbai',
+          y: 184
+        },
+        {
+          x: 'Ahmedabad',
+          y: 55
+        },
+        {
+          x: 'Bangaluru',
+          y: 84
+        },
+        {
+          x: 'Pune',
+          y: 31
+        },
+        {
+          x: 'Chennai',
+          y: 70
+        },
+        {
+          x: 'Jaipur',
+          y: 30
+        },
+        {
+          x: 'Surat',
+          y: 44
+        },
+        {
+          x: 'Hyderabad',
+          y: 68
+        },
+        {
+          x: 'Lucknow',
+          y: 28
+        },
+        {
+          x: 'Indore',
+          y: 19
+        },
+        {
+          x: 'Kanpur',
+          y: 29
         }
+      ]}],
+    chart: {
+      type: 'treemap',
+      toolbar: {
+        show: false
+      },
+      zoom: {
+        enabled: true
       }
     },
-  },
-  xaxis: {
-    type: 'datetime',
-    categories: ['01/01/2011 GMT', '01/02/2011 GMT', '01/03/2011 GMT', '01/04/2011 GMT','01/05/2011 GMT', '01/06/2011 GMT', '01/07/2011 GMT', '01/08/2011 GMT', '01/09/2011 GMT',
-    ],
-  },
-  legend: {
-    position: 'right',
-    offsetY: 40
-  },
-  fill: {
-    opacity: 1
-  }
+    plotOptions: {
+      treemap: {
+        distributed: true,
+        enableShades: false
+      }
+    }
+ 
+ 
   };
 
  
-  const chartOptions = {
-    chart: {
-      fontFamily: 'inherit',
-      foreColor: 'inherit',
-      height: '100%',
-      stacked: true,
-      type: 'bar',
-      toolbar: {
-        show: true,
-      },
-      zoom: {
-        enabled: true,
-      },
-    },
-    legend: {
-        position: 'right',
-        offsetY: 40
-      },
-    // plotOptions: {
-    //   polarArea: {
-    //     spokes: {
-    //       connectorColors: theme.palette.divider,
-    //     },
-    //     rings: {
-    //       strokeColor: theme.palette.divider,
-    //     },
-    //   },
-    // },
-    plotOptions: {
-        bar: {
-          horizontal: false,
-          borderRadius: 10,
-          dataLabels: {
-            total: {
-              enabled: true,
-              style: {
-                fontSize: '13px',
-                fontWeight: 900
-              }
-            }
-          }
-        },
-      },
-      xaxis: {
-        type: 'datetime',
-        categories: ['01/01/2011 GMT', '01/02/2011 GMT', '01/03/2011 GMT', '01/04/2011 GMT',
-          '01/05/2011 GMT', '01/06/2011 GMT'
-        ],
-      },
-    states: {
-      hover: {
-        filter: {
-          type: 'darken',
-          value: 0.75,
-        },
-      },
-    },
-    stroke: {
-      width: 2,
-    },
-    theme: {
-      monochrome: {
-        enabled: true,
-        color: theme.palette.secondary.main,
-        shadeIntensity: 0.75,
-        shadeTo: 'dark',
-      },
-    },
-    
-    tooltip: {
-      followCursor: true,
-      theme: 'dark',
-    },
-  };
-
-  console.log(chartOptions.labels) ;
-
 
   useEffect(() => {
     setAwaitRender(false);
@@ -188,6 +117,35 @@ function ThirdTopBusinessWidget(props) {
         <Typography className="text-lg font-medium tracking-tight leading-6 truncate">
           Top 10 Busiest Robots by Processs Name
         </Typography>
+        <div className="mt-12 sm:mt-0 sm:ml-8">
+          <Tabs
+            value={tabValue}
+            onChange={(ev, value) => setTabValue(value)}
+            indicatorColor="secondary"
+            textColor="inherit"
+            variant="scrollable"
+            scrollButtons={false}
+            className="-mx-4 min-h-40"
+            classes={{ indicator: 'flex justify-center bg-transparent w-full h-full' }}
+            TabIndicatorProps={{
+              children: (
+                <Box
+                  sx={{ bgcolor: 'text.disabled' }}
+                  className="w-full h-full rounded-full opacity-20"
+                />
+              ),
+            }}
+          >
+            {Object.entries(ranges).map(([key, label]) => (
+              <Tab
+                className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12"
+                disableRipple
+                key={key}
+                label={label}
+              />
+            ))}
+          </Tabs>
+        </div>
       </div>
       <div className="flex flex-col flex-auto mt-6">
         <ReactApexChart

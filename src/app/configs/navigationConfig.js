@@ -14,10 +14,10 @@ const navigationConfig = [
     children: [
       {
         id: 'dashboards.project',
-        title: 'Project',
+        title: 'Performance',
         type: 'item',
         icon: 'heroicons-outline:clipboard-check',
-        url: '/dashboards/project',
+        url: '/dashboards/performance',
       },
     ],
   },

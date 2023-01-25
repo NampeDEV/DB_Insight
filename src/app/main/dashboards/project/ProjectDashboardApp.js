@@ -11,8 +11,6 @@ import ProjectDashboardAppHeader from './ProjectDashboardAppHeader';
 import reducer from './store';
 import { getWidgets, selectWidgets } from './store/widgetsSlice';
 import HomeTab from './tabs/home/HomeTab';
-import TeamTab from './tabs/team/TeamTab';
-import BudgetTab from './tabs/budget/BudgetTab';
 
 const Root = styled(FusePageSimple)(({ theme }) => ({
   '& .FusePageSimple-header': {

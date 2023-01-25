@@ -31,7 +31,7 @@ function TopTotalUtilizationWidget() {
           <FuseSvgIcon>heroicons-outline:dots-vertical</FuseSvgIcon>
         </IconButton>
       </div>
-      <div className="text-center mt-8">
+      <div className="text-center h-192">
         <Typography className="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-blue-500">
           {data.count[currentRange] }
         </Typography>
